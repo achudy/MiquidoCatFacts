@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MiquidoCatFacts</string>
+    <string name="cat_image">FunnyCatImage</string>
+    <string name="refresh_button_text">RefreshButton</string>
+    <string name="toolbar_title">Cat facts!</string>
+    <string name="cat_fact">Cat fact!</string>
+    <string name="error">Something\'s gone awry…\nOur cats facts are in another castle!</string>
+</resources>
