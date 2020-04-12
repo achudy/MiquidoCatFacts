@@ -1,7 +1,5 @@
 package com.chudy.miquidocatfacts.activity
 
-import android.annotation.SuppressLint
-import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.chudy.miquidocatfacts.R
@@ -19,7 +17,6 @@ class DetailsActivity : AppCompatActivity() {
      * fact text is set from extras in the intent,
      * fact date is properly formatted and set as text appropriately.
      */
-    @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
@@ -35,19 +32,22 @@ class DetailsActivity : AppCompatActivity() {
         text_date_detail.text = prepareDateToPrint(factDate)
     }
 
-    /**
-     * A function to parse the date from a format written in val formatter to a readable
-     * one in val formatterToReadableDate.
-     * @param unformattedDate date string got from the API
-     * @return a string with proper formatting
-     */
-    private fun prepareDateToPrint(unformattedDate: String): String {
-        val calendar = Calendar.getInstance()
-        val formatter = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale("pl", "PL"))
-        val formatterToReadableDate = SimpleDateFormat("dd-MM-yyyy 'at' HH:mm", Locale("pl", "PL"))
+    companion object {
+        /**
+         * A function to parse the date from a format written in val formatter to a readable
+         * one in val formatterToReadableDate.
+         * @param unformattedDate date string got from the API
+         * @return a string with proper formatting
+         */
+        fun prepareDateToPrint(unformattedDate: String): String {
+            val calendar = Calendar.getInstance()
+            val formatter = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale("pl", "PL"))
+            val formatterToReadableDate =
+                SimpleDateFormat("dd-MM-yyyy 'at' HH:mm", Locale("pl", "PL"))
 
-        calendar.time = formatter.parse(unformattedDate)!!
+            calendar.time = formatter.parse(unformattedDate)!!
 
-        return formatterToReadableDate.format(calendar.time)
+            return formatterToReadableDate.format(calendar.time)
+        }
     }
 }

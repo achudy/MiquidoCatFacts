@@ -17,4 +17,5 @@ Data is obtained from [Cat Facts public API](https://alexwohlbruck.github.io/cat
 + The application is stored on a Github repository,
 + Dependency injection is done with [Koin](https://github.com/InsertKoinIO/koin),
 + Background operations are handled with Kotlin coroutines,
-+ The pattern used is MVVM.
++ The pattern used is MVVM,
++ The app is unit tested.

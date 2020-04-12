@@ -4,9 +4,8 @@ import com.chudy.miquidocatfacts.networking.Api
 import com.chudy.miquidocatfacts.networking.Resource
 import com.chudy.miquidocatfacts.networking.ResponseHandler
 import org.koin.dsl.module
-import retrofit2.HttpException
 
-val catFactModule = module {
+val catFactRepositoryModule = module {
     factory { CatFactRepository(get(), get()) }
 }
 
@@ -19,7 +18,7 @@ open class CatFactRepository(
     private val responseHandler: ResponseHandler
     ) {
 
-    /**
+    /**d
      * The function calls for a resource and handles it with a success when there are no errors,
      * catches any exception and handles it appropriately.
      */
@@ -28,10 +27,7 @@ open class CatFactRepository(
             val response = api.requestThirtyRandomCatFacts()
             responseHandler.handleSuccess(response)
         } catch (e: Exception){
-            when(e){
-                is HttpException -> responseHandler.handleException(e.code())
-                else -> responseHandler.handleException(e)
-            }
+            responseHandler.handleException(e)
         }
     }
 

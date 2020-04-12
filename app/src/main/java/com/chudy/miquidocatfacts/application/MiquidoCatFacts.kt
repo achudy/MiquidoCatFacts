@@ -1,7 +1,7 @@
 package com.chudy.miquidocatfacts.application
 
 import android.app.Application
-import com.chudy.miquidocatfacts.model.catFactModule
+import com.chudy.miquidocatfacts.model.catFactRepositoryModule
 import com.chudy.miquidocatfacts.networking.networkModule
 import com.chudy.miquidocatfacts.viewmodel.viewModelModule
 import org.koin.android.ext.koin.androidContext
@@ -18,7 +18,7 @@ class MiquidoCatFacts : Application() {
         startKoin {
             androidLogger()
             androidContext(this@MiquidoCatFacts)
-            modules(listOf(networkModule, catFactModule, viewModelModule))
+            modules(listOf(networkModule, catFactRepositoryModule, viewModelModule))
         }
     }
 }

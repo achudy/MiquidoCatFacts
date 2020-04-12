@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:paddingBottom="16dp"
-                tools:text="The frequency of a domestic cat's purr is the same at which muscles and bones repair themselves." />
+                tools:text="The frequency of a domestic cat's purr is the same as blah blah." />
 
             <TextView
                 android:id="@+id/text_date_detail"
@@ -60,7 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/text_fact_detail"
-                tools:text="2018-01-04T01:10:54.673Z" />
+                tools:text="01-01-2020 at 00:01" />
         </RelativeLayout>
     </ScrollView>
 
